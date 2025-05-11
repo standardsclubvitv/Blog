@@ -500,3 +500,11 @@ footer::before {
     padding-bottom: env(safe-area-inset-bottom);
   }
 }
+
+.loading {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  color: #555;
+}
