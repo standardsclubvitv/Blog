@@ -1,4 +1,3 @@
-// public/js/app.js
 import {
   initializeApp
 } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
@@ -109,13 +108,18 @@ function convertImageToBase64(file) {
 
 // Load blogs with filter
 async function loadBlogs() {
+  // Show loading message
+  blogsContainer.innerHTML = `<div class="loading">Loading blogs, please wait...</div>`;
+
   const blogQuery = query(collection(db, "blogs"));
   const querySnapshot = await getDocs(blogQuery);
-  blogsContainer.innerHTML = "";
 
   const selectedTrack = document.getElementById("filter-track").value;
   const selectedDateInput = document.getElementById("filter-date").value;
   const selectedDate = selectedDateInput ? new Date(selectedDateInput) : null;
+
+  // Clear content
+  blogsContainer.innerHTML = "";
 
   querySnapshot.forEach((docSnap) => {
     const blog = docSnap.data();
