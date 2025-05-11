@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Standards Club | Blog</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="theme-color" content="#d4af37">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="https://www.standardsvit.live/logo.png" alt="Standards Club Logo" class="logo" />
+      <h1>Standards Club | Blog</h1>
+    </div>
+    <div class="auth-buttons">
+      <button id="login-btn">Login with Google</button>
+      <button id="logout-btn" style="display: none;">Logout</button>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <div class="left-content">
+      <button id="create-post" style="display: none;">Create New Post</button>
+
+      <form id="blog-form" style="display: none;">
+        <input id="title" placeholder="Title" required />
+        <select id="track" required>
+          <option value="" disabled selected>Select Track</option>
+          <option value="AI">AI</option>
+          <option value="Web Dev">Web Dev</option>
+          <option value="Cybersecurity">Cybersecurity</option>
+          <option value="IoT">IoT</option>
+          <option value="Robotics">Robotics</option>
+        </select>
+        <textarea id="description" placeholder="Share your knowledge..." required></textarea>
+        <input type="file" id="image" accept="image/*" required />
+        <input id="source" placeholder="Source link (optional)" />
+        <button type="submit">Publish Post</button>
+      </form>
+
+      <div id="blogs-container"></div>
+    </div>
+
+    <aside class="filter-sidebar">
+      <h3>Filter Posts</h3>
+      <label for="filter-track">Track:</label>
+      <select id="filter-track">
+        <option value="">All Tracks</option>
+        <option value="AI">AI</option>
+        <option value="Web Dev">Web Dev</option>
+        <option value="Cybersecurity">Cybersecurity</option>
+        <option value="IoT">IoT</option>
+        <option value="Robotics">Robotics</option>
+      </select>
+
+      <label for="filter-date">Date (After):</label>
+      <input type="date" id="filter-date" />
+      <button id="apply-filter">Apply Filter</button>
+      <button id="reset-filter">Reset</button>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Standards Club. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript (ES module) -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
