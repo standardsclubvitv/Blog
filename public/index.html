@@ -1,74 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-  <title>Standards Club | Blog</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <meta name="theme-color" content="#d4af37">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Standards Club",
+  "description": "BIS standards club at VIT, promoting excellence and innovation.",
+  "url": "https://blog.standardsvit.live/",
+  "logo": "https://standardsclubvitv.github.io/image-api/images/logo.png",
+  "email": "standardsclub@vit.ac.in",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Vellore",
+    "addressRegion": "Tamil Nadu",
+    "postalCode": "632014",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://www.instagram.com/standardsclub.vit/",
+    "https://x.com/StandardsVIT",
+    "https://www.linkedin.com/company/standards-club-vit/"
+  ]
+}
+</script>
+    <title>Standards Club | Blog</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.png" type="image/png" />
+
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Explore insightful blogs from VITv standards club students on tech, innovation, design, and more." />
+    <meta name="author" content="Standards Club VITv" />
+    <meta name="keywords"
+        content="VITv, standards club VITv, BIS, blog, students, tech, innovation, design, Firebase" />
+
+    <!-- Social Sharing Meta (optional but recommended) -->
+    <meta property="og:title" content="Standards Club VITv" />
+    <meta property="og:description"
+        content="Read, post, and share blogs from the vibrant VITv standards club community." />
+    <meta property="og:image" content="https://standardsclubvitv.github.io/image-api/images/logo.png" />
+    <meta property="og:url" content="https://blog.standardsvit.live/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="author" content="Pranav Rayban">
+    <meta name="copyright" content="Standards Club, VIT">
+
+    <link rel="icon" href="https://standardsclubvitv.github.io/image-api/images/logo.png" type="image/png">
+    <link rel="shortcut icon" href="https://standardsclubvitv.github.io/image-api/images/logo.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://standardsclubvitv.github.io/image-api/images/logo.png">
+    <link rel="apple-touch-icon" sizes="32x32" href="https://standardsclubvitv.github.io/image-api/images/logo.png">
+    <link rel="manifest" href="https://standardsclubvitv.github.io/image-api/images/logo.png">
+    <link rel="mask-icon" href="https://standardsclubvitv.github.io/image-api/images/logo.png" color="#5bbad5">
+
+
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta name="theme-color" content="#d4af37">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-  <header>
-    <div class="header-content">
-      <img src="https://www.standardsvit.live/logo.png" alt="Standards Club Logo" class="logo" />
-      <h1>Standards Club | Blog</h1>
-    </div>
-    <div class="auth-buttons">
-      <button id="login-btn">Login with Google</button>
-      <button id="logout-btn" style="display: none;">Logout</button>
-    </div>
-  </header>
+    <header>
+        <div class="header-content">
+            <img src="https://www.standardsvit.live/logo.png" alt="Standards Club Logo" class="logo" />
+            <h1>Standards Club | Blog</h1>
+        </div>
+        <div class="auth-buttons">
+            <button id="login-btn">Login with Google</button>
+            <button id="logout-btn" style="display: none;">Logout</button>
+        </div>
+    </header>
 
-  <main class="main-container">
-    <div class="left-content">
-      <button id="create-post" style="display: none;">Create New Post</button>
+    <main class="main-container">
+        <div class="left-content">
+            <button id="create-post" style="display: none;">Create New Post</button>
 
-      <form id="blog-form" style="display: none;">
-        <input id="title" placeholder="Title" required />
-        <select id="track" required>
-          <option value="" disabled selected>Select Track</option>
-          <option value="AI">AI</option>
-          <option value="Web Dev">Web Dev</option>
-          <option value="Cybersecurity">Cybersecurity</option>
-          <option value="IoT">IoT</option>
-          <option value="Robotics">Robotics</option>
-        </select>
-        <textarea id="description" placeholder="Share your knowledge..." required></textarea>
-        <input type="file" id="image" accept="image/*" required />
-        <input id="source" placeholder="Source link (optional)" />
-        <button type="submit">Publish Post</button>
-      </form>
+            <form id="blog-form" style="display: none;">
+                <input id="title" placeholder="Title" required />
+                <select id="track" required>
+                    <option value="" disabled selected>Select Track</option>
+                    <option value="AI">AI</option>
+                    <option value="Web Dev">Web Dev</option>
+                    <option value="Cybersecurity">Cybersecurity</option>
+                    <option value="IoT">IoT</option>
+                    <option value="Robotics">Robotics</option>
+                </select>
+                <textarea id="description" placeholder="Share your knowledge..." required></textarea>
+                <input type="file" id="image" accept="image/*" required />
+                <input id="source" placeholder="Source link (optional)" />
+                <button type="submit">Publish Post</button>
+            </form>
 
-      <div id="blogs-container"></div>
-    </div>
+            <div id="blogs-container"></div>
+        </div>
 
-    <aside class="filter-sidebar">
-      <h3>Filter Posts</h3>
-      <label for="filter-track">Track:</label>
-      <select id="filter-track">
-        <option value="">All Tracks</option>
-        <option value="AI">AI</option>
-        <option value="Web Dev">Web Dev</option>
-        <option value="Cybersecurity">Cybersecurity</option>
-        <option value="IoT">IoT</option>
-        <option value="Robotics">Robotics</option>
-      </select>
+        <aside class="filter-sidebar">
+            <h3>Filter Posts</h3>
+            <label for="filter-track">Track:</label>
+            <select id="filter-track">
+                <option value="">All Tracks</option>
+                <option value="AI">AI</option>
+                <option value="Web Dev">Web Dev</option>
+                <option value="Cybersecurity">Cybersecurity</option>
+                <option value="IoT">IoT</option>
+                <option value="Robotics">Robotics</option>
+            </select>
 
-      <label for="filter-date">Date (After):</label>
-      <input type="date" id="filter-date" />
-      <button id="apply-filter">Apply Filter</button>
-      <button id="reset-filter">Reset</button>
-    </aside>
-  </main>
+            <label for="filter-date">Date (After):</label>
+            <input type="date" id="filter-date" />
+            <button id="apply-filter">Apply Filter</button>
+            <button id="reset-filter">Reset</button>
+        </aside>
+    </main>
 
-  <footer>
-    <p>&copy; 2025 Standards Club. All rights reserved.</p>
-  </footer>
+    <footer>
+        <p>&copy; 2025 Standards Club. All rights reserved.</p>
+    </footer>
 
-  <!-- JavaScript (ES module) -->
-  <script type="module" src="js/app.js"></script>
+    <!-- JavaScript (ES module) -->
+    <script type="module" src="js/app.js"></script>
 </body>
+
 </html>
